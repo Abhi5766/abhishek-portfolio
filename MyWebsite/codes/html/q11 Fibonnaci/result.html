@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+
+<body onload="generateFibo()">
+
+<h2>First 10 Fibonacci Numbers</h2>
+
+<input type="text" id="output" size="40"><br><br>
+
+<button onclick="goBack()">Back</button>
+
+<script>
+function generateFibo() {
+    let a = 0, b = 1, c;
+    let result = a + " " + b;
+
+    for (let i = 3; i <= 10; i++) {
+        c = a + b;
+        result += " " + c;
+        a = b;
+        b = c;
+    }
+
+    document.getElementById("output").value = result;
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Validation Form</title>
+</head>
+
+<body bgcolor="lightyellow">
+
+<center>
+    <h2>User Information Form</h2>
+</center>
+
+<form onsubmit="return validateForm()">
+
+    Name:
+    <input type="text" id="name"><br><br>
+
+    STD Code:
+    <input type="text" id="std"><br><br>
+
+    Landline Number:
+    <input type="text" id="landline"><br><br>
+
+    Mobile Number:
+    <input type="text" id="mobile"><br><br>
+
+    Email:
+    <input type="text" id="email"><br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let std = document.getElementById("std").value;
+    let landline = document.getElementById("landline").value;
+    let mobile = document.getElementById("mobile").value;
+    let email = document.getElementById("email").value;
+
+    if (name == "") {
+        alert("Enter Name");
+        return false;
+    }
+
+    if (std.length > 4) {
+        alert("STD Code should not exceed 4 digits");
+        return false;
+    }
+
+    if (landline.length < 5 || landline.length > 7) {
+        alert("Landline number must be 5 to 7 digits");
+        return false;
+    }
+
+    if (mobile.length != 10) {
+        alert("Mobile number must be exactly 10 digits");
+        return false;
+    }
+
+    if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+        alert("Invalid Email");
+        return false;
+    }
+
+    alert("Form Submitted Successfully");
+    return true;
+}
+</script>
+
+</body>
+</html>

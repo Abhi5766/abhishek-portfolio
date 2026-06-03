@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Expression Calculator</title>
+</head>
+
+<body bgcolor="lightblue">
+
+<center>
+    <h2>Mathematical Expression Calculator</h2>
+
+    <form>
+        Enter Expression:
+        <input type="text" id="expression"><br><br>
+
+        Result:
+        <input type="text" id="result" readonly><br><br>
+
+        <input type="button" value="Calculate" onclick="calculateResult()">
+        <input type="reset" value="Reset">
+    </form>
+</center>
+
+<script>
+function calculateResult() {
+    let exp = document.getElementById("expression").value;
+    let ans = eval(exp);
+    document.getElementById("result").value = ans;
+}
+</script>
+
+</body>
+</html>

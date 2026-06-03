@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Textbox Validation Form</title>
+</head>
+
+<body bgcolor="lightyellow">
+
+<center>
+    <h2>User Form Validation</h2>
+</center>
+
+<form onsubmit="return validateForm()">
+
+    Name:
+    <input type="text" id="name" value="Abhishek"><br><br>
+
+    Email:
+    <input type="text" id="email" value="abhi@gmail.com"><br><br>
+
+    Mobile:
+    <input type="text" id="mobile" value="9860129034"><br><br>
+
+    City:
+    <input type="text" id="city" value="Pune"><br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
+
+<script>
+function validateForm() {
+
+    let fields = ["name", "email", "mobile", "city"];
+
+    for (let i = 0; i < fields.length; i++) {
+        let box = document.getElementById(fields[i]);
+
+        if (box.value == "") {
+            alert(fields[i] + " textbox is empty");
+            box.focus();
+            return false;
+        }
+    }
+
+    alert("All textboxes are filled");
+    return true;
+}
+</script>
+
+</body>
+</html>

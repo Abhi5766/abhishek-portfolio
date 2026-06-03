@@ -1,0 +1,19 @@
+
+body {
+    font-family: Arial;
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+    color: darkblue;
+}
+
+h2 {
+    color: green;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Operations</title>
+</head>
+
+<body bgcolor="lightyellow">
+
+<h2>Number Checker</h2>
+
+Enter Number:
+<input type="number" id="num"><br><br>
+
+<select id="choice">
+    <option value="even">Even / Odd</option>
+    <option value="prime">Prime / Not Prime</option>
+    <option value="pos">Positive / Negative</option>
+</select><br><br>
+
+<button onclick="check()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function check() {
+    let n = document.getElementById("num").value;
+    let ch = document.getElementById("choice").value;
+    let res = "";
+
+    if (ch == "even") {
+        res = (n % 2 == 0) ? "Even Number" : "Odd Number";
+    }
+    else if (ch == "prime") {
+        let flag = true;
+        if (n <= 1) flag = false;
+        for (let i = 2; i < n; i++) {
+            if (n % i == 0) flag = false;
+        }
+        res = flag ? "Prime Number" : "Not Prime";
+    }
+    else if (ch == "pos") {
+        res = (n >= 0) ? "Positive Number" : "Negative Number";
+    }
+
+    document.getElementById("result").innerHTML = res;
+}
+</script>
+
+</body>
+</html>

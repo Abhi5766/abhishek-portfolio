@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+
+<body bgcolor="lightyellow">
+
+<center>
+    <h2>User Login</h2>
+</center>
+
+<form>
+
+    Login Name:
+    <input type="text" id="username"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    <input type="button" value="Login" onclick="checkLogin()">
+
+</form>
+
+<h3 id="result"></h3>
+
+<script>
+function checkLogin() {
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if (user == "abhishek" && pass == "1234") {
+
+        document.getElementById("result").innerHTML =
+        "Name: Abhishek Kharat <br>" +
+        "DOB: 08-01-2005 <br>" +
+        "Gender: Male <br>" +
+        "Course: BCA <br>" +
+        "University: BVDU";
+
+    } else {
+        document.getElementById("result").innerHTML =
+        "Invalid Login Name or Password";
+    }
+}
+</script>
+
+</body>
+</html>

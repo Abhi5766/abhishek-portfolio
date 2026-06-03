@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Entrance Form</title>
+</head>
+
+<body bgcolor="lightyellow">
+
+<center>
+    <h2>Student Entrance Form</h2>
+</center>
+
+<form>
+
+    Name:
+    <input type="text" id="name"><br><br>
+
+    Matriculation Marks:
+    <input type="number" id="matric"><br><br>
+
+    Higher Secondary Marks:
+    <input type="number" id="hs"><br><br>
+
+    Graduation Marks:
+    <input type="number" id="grad"><br><br>
+
+    Science/Maths in 11th & 12th:
+    <input type="checkbox" id="science"> Yes<br><br>
+
+    Select Course:
+    <select id="course">
+        <option value="BCA">BCA</option>
+        <option value="BBA">BBA</option>
+        <option value="MCA">MCA</option>
+    </select><br><br>
+
+    <input type="button" value="Check Eligibility" onclick="checkEligibility()">
+
+</form>
+
+<h3 id="result"></h3>
+
+<script>
+function checkEligibility() {
+
+    let matric = Number(document.getElementById("matric").value);
+    let hs = Number(document.getElementById("hs").value);
+    let grad = Number(document.getElementById("grad").value);
+    let course = document.getElementById("course").value;
+    let science = document.getElementById("science").checked;
+
+    let message = "";
+
+    if (matric > 55 && hs > 60 && grad > 60) {
+
+        if (course == "MCA") {
+            if (science) {
+                message = "Eligible for MCA";
+            } else {
+                message = "Not eligible for MCA (Science/Maths required)";
+            }
+        } else {
+            message = "Eligible for " + course;
+        }
+
+    } else {
+        message = "Not eligible for admission";
+    }
+
+    document.getElementById("result").innerHTML = message;
+}
+</script>
+
+</body>
+</html>

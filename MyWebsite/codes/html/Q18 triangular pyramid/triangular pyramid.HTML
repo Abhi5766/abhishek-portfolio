@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Triangular Pyramid</title>
+</head>
+
+<body bgcolor="lightblue">
+
+<center>
+    <h2>Triangular Pyramid</h2>
+
+    Enter Number of Lines:
+    <input type="number" id="lines"><br><br>
+
+    <button onclick="printPyramid()">Show Pyramid</button><br><br>
+
+    <textarea id="output" rows="15" cols="30"></textarea>
+</center>
+
+<script>
+function printPyramid() {
+    let n = document.getElementById("lines").value;
+    let result = "";
+
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= i; j++) {
+            result += "* ";
+        }
+        result += "\n";
+    }
+
+    document.getElementById("output").value = result;
+}
+</script>
+
+</body>
+</html>

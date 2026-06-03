@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tables 2 to 10</title>
+</head>
+
+<body bgcolor="lightblue">
+
+<center>
+    <h2>Multiplication Tables (2 to 10)</h2>
+
+    <form>
+        <textarea id="output" rows="20" cols="40"></textarea><br><br>
+
+        <input type="button" value="Show Tables" onclick="showTables()">
+        <input type="reset" value="Reset">
+    </form>
+</center>
+
+<script>
+function showTables() {
+    let result = "";
+
+    for (let i = 2; i <= 10; i++) {
+        result += "Table of " + i + "\n";
+
+        for (let j = 1; j <= 10; j++) {
+            result += i + " x " + j + " = " + (i * j) + "\n";
+        }
+
+        result += "\n";
+    }
+
+    document.getElementById("output").value = result;
+}
+</script>
+
+</body>
+</html>

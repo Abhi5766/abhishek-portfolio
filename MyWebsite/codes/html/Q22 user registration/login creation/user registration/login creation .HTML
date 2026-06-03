@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Login</title>
+</head>
+
+<body bgcolor="lightblue">
+
+<center>
+    <h2>Create User Login</h2>
+</center>
+
+<form onsubmit="return validateForm()">
+
+    Login Name:
+    <input type="text" id="login"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    Confirm Password:
+    <input type="password" id="confirm"><br><br>
+
+    <input type="submit" value="Create Login">
+    <input type="reset" value="Reset">
+
+</form>
+
+<script>
+function validateForm() {
+
+    let login = document.getElementById("login").value;
+    let pass = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
+
+    if (login == "") {
+        alert("Enter Login Name");
+        return false;
+    }
+
+    if (pass == "") {
+        alert("Enter Password");
+        return false;
+    }
+
+    if (pass != confirm) {
+        alert("Passwords do not match");
+        return false;
+    }
+
+    alert("Login Created Successfully");
+    return true;
+}
+</script>
+
+</body>
+</html>
